@@ -76,13 +76,15 @@
             android:authorities="com.huawei.rcs.eab"
             android:exported="false" />
 
-        <activity android:name=".call.CallIncomingActivity">
+        <activity android:name=".activity.call.CallIncomingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.fuli.FuliActivity"/>
+        <activity android:name=".activity.ShowImageActivity"/>
         <service android:name=".service.IPTVService">
             <intent-filter>
                 <action android:name="com.xyt.jhonelee.iptvcall.iptvservice"/>

@@ -6,7 +6,7 @@ import android.content.Intent;
 
 import com.huawei.rcs.call.CallApi;
 import com.huawei.rcs.call.CallSession;
-import com.xyt.jhonelee.iptvcall.call.CallIncomingActivity;
+import com.xyt.jhonelee.iptvcall.activity.call.CallIncomingActivity;
 
 /**
  * Created by JhoneLee on 2016/11/25.

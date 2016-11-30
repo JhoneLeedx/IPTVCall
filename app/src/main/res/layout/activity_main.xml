@@ -11,7 +11,29 @@
     tools:context="com.xyt.jhonelee.iptvcall.MainActivity">
 
     <TextView
+        android:id="@+id/tx_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:id="@+id/button2"
+        android:text="否"
+        android:layout_below="@+id/tx_view"
+        android:layout_toEndOf="@+id/tx_view"
+        android:layout_marginTop="60dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:text="是"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/tx_view"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="19dp" />
+
 </RelativeLayout>
