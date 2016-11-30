@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="176dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="仿斗鱼滑动验证码"
+        android:textSize="18sp"/>
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/iv_post_ry_1" />
+    <TextView
+        android:id="@+id/tv_autor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="作者：jhonelee"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="github地址"/>
+</LinearLayout>
