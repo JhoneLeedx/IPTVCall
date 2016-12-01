@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.xyt.jhonelee.iptvcall.DpiUtil;
 import com.xyt.jhonelee.iptvcall.MotroViewUtil;
 import com.xyt.jhonelee.iptvcall.R;
 import com.xyt.jhonelee.iptvcall.model.ResultsBean;
@@ -56,7 +57,13 @@ public class AndroidActivity extends Activity implements AndroidView,AndroidList
         presenter = new AndroidPresenter(this);
         presenter.showAndroid(20,1);
         mList = new ArrayList<>();
-        GridLayoutManager manager = new GridLayoutManager(this,5);
+
+        GridLayoutManager manager=null;
+        if (DpiUtil.getTVOrPhone(this)){
+            manager = new GridLayoutManager(this,2);
+        }else {
+            manager = new GridLayoutManager(this,5);
+        }
         mRecycler.setLayoutManager(manager);
         mMetro.attachTo(mRecycler);
         mRecycler.setFocusable(false);

@@ -53,7 +53,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         final ResultsBean bean = mList.get(position);
         holder.tvTitle.setText(bean.getWho());
         holder.tvDesc.setText(bean.getDesc());
-        Glide.with(mContext).load(bean.getUrl()).into(holder.ivImage);
+        Glide.with(mContext).load(bean.getUrl())
+                .placeholder(android.R.drawable.ic_search_category_default)
+                .error(android.R.drawable.stat_notify_error)
+                .into(holder.ivImage);
         holder.itemView.setTag(position);
         holder.itemView.setFocusable(true);
         holder.itemView.setOnClickListener(new View.OnClickListener() {

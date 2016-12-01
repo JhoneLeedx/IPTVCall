@@ -51,7 +51,10 @@ public class AndroidItemAdapter extends RecyclerView.Adapter<AndroidItemAdapter.
         if (bean.getImages()!=null){
             if (bean.getImages().size()>0){
                 String url = bean.getImages().get(0);
-                Glide.with(mContext).load(url).into(holder.mImage);
+                Glide.with(mContext).load(url)
+                        .placeholder(android.R.drawable.ic_search_category_default)
+                        .error(android.R.drawable.stat_notify_error)
+                        .into(holder.mImage);
             }
         }
         holder.itemView.setTag(position);
