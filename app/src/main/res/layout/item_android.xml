@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="仿斗鱼滑动验证码"
+        android:maxLength="9"
+        android:textColor="@android:color/white"
         android:textSize="18sp"/>
     <ImageView
         android:id="@+id/iv_image"
@@ -22,9 +24,12 @@
         android:id="@+id/tv_autor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
         android:text="作者：jhonelee"/>
     <TextView
+        android:id="@+id/tv_github"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
         android:text="github地址"/>
 </LinearLayout>

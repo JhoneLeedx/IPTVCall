@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.xyt.jhonelee.iptvcall.MotroViewUtil;
 import com.xyt.jhonelee.iptvcall.R;
+import com.xyt.jhonelee.iptvcall.activity.android.AndroidActivity;
 import com.xyt.jhonelee.iptvcall.activity.fuli.FuliActivity;
 import com.xyt.jhonelee.iptvcall.widget.MetroViewBorderImpl;
 
@@ -56,8 +57,9 @@ public class CallIncomingActivity extends Activity {
     public void Onclick(View view){
         switch (view.getId()){
             case R.id.btn_video:
-                showDialog();
-                Toast.makeText(this,"btn_video",Toast.LENGTH_SHORT).show();
+              //  showDialog();
+                startActivity(new Intent(this, AndroidActivity.class));
+               // Toast.makeText(this,"btn_video",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_voice:
                 Toast.makeText(this,"btn_voice",Toast.LENGTH_SHORT).show();

@@ -149,7 +149,7 @@ public class ResultsBean implements Parcelable {
         this.images = in.createStringArrayList();
     }
 
-    public static final Creator<ResultsBean> CREATOR = new Creator<ResultsBean>() {
+    public static final Parcelable.Creator<ResultsBean> CREATOR = new Parcelable.Creator<ResultsBean>() {
         @Override
         public ResultsBean createFromParcel(Parcel source) {
             return new ResultsBean(source);
