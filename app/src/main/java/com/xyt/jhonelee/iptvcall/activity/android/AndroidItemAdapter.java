@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.xyt.jhonelee.iptvcall.R;
-import com.xyt.jhonelee.iptvcall.model.ResultsBean;
+import com.xyt.jhonelee.iptvcall.bean.ResultsBean;
 
 import java.util.List;
 

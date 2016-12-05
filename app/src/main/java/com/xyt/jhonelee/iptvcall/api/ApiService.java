@@ -1,7 +1,7 @@
 package com.xyt.jhonelee.iptvcall.api;
 
 import com.xyt.jhonelee.iptvcall.api.network.FuliNetwork;
-import com.xyt.jhonelee.iptvcall.model.GankInfo;
+import com.xyt.jhonelee.iptvcall.bean.GankInfo;
 
 import java.io.IOException;
 

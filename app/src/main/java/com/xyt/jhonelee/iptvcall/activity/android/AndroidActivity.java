@@ -1,6 +1,7 @@
 package com.xyt.jhonelee.iptvcall.activity.android;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +14,8 @@ import android.widget.Toast;
 import com.xyt.jhonelee.iptvcall.DpiUtil;
 import com.xyt.jhonelee.iptvcall.MotroViewUtil;
 import com.xyt.jhonelee.iptvcall.R;
-import com.xyt.jhonelee.iptvcall.model.ResultsBean;
+import com.xyt.jhonelee.iptvcall.activity.ShowAndroidActivity;
+import com.xyt.jhonelee.iptvcall.bean.ResultsBean;
 import com.xyt.jhonelee.iptvcall.widget.MetroViewBorderImpl;
 
 import java.util.ArrayList;
@@ -82,7 +84,9 @@ public class AndroidActivity extends Activity implements AndroidView,AndroidList
 
     @Override
     public void StartAndroid(ResultsBean bean) {
-
+        Intent intent = new Intent(this, ShowAndroidActivity.class);
+        intent.putExtra("url",bean.getUrl());
+        startActivity(intent);
     }
 
     @Override

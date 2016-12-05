@@ -1,4 +1,4 @@
-package com.xyt.jhonelee.iptvcall.model;
+package com.xyt.jhonelee.iptvcall.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;

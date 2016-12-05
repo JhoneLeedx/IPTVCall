@@ -1,6 +1,6 @@
 package com.xyt.jhonelee.iptvcall.api.network;
 
-import com.xyt.jhonelee.iptvcall.model.GankInfo;
+import com.xyt.jhonelee.iptvcall.bean.GankInfo;
 
 import retrofit2.http.GET;
 import retrofit2.http.Path;

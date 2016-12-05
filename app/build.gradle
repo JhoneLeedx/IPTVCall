@@ -30,7 +30,7 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.android.support:recyclerview-v7:25.0.1'
 
-/*retrofit2 rxjava结合的build*/
+    /*retrofit2 rxjava结合的build*/
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
@@ -40,4 +40,7 @@ dependencies {
     /*图片加载必须加载support-v4包*/
     compile 'com.github.bumptech.glide:glide:3.5.2'
     compile 'com.android.support:support-v4:25.0.1'
+    //引入第三方图像变换库
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+
 }

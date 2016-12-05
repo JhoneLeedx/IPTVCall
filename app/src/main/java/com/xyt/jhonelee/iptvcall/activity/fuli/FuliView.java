@@ -1,6 +1,6 @@
 package com.xyt.jhonelee.iptvcall.activity.fuli;
 
-import com.xyt.jhonelee.iptvcall.model.ResultsBean;
+import com.xyt.jhonelee.iptvcall.bean.ResultsBean;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface FuliView {
 
+    void showError(String error);
     void showProgress();
     void dismisProgress();
     void loadURlImage(List<ResultsBean> list);

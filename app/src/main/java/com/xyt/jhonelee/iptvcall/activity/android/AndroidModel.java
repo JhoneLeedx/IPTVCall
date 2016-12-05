@@ -1,7 +1,7 @@
 package com.xyt.jhonelee.iptvcall.activity.android;
 
 import com.xyt.jhonelee.iptvcall.api.ApiService;
-import com.xyt.jhonelee.iptvcall.model.GankInfo;
+import com.xyt.jhonelee.iptvcall.bean.GankInfo;
 
 import rx.Observable;
 

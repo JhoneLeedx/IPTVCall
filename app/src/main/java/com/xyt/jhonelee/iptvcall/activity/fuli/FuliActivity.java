@@ -15,7 +15,7 @@ import com.xyt.jhonelee.iptvcall.DpiUtil;
 import com.xyt.jhonelee.iptvcall.MotroViewUtil;
 import com.xyt.jhonelee.iptvcall.R;
 import com.xyt.jhonelee.iptvcall.activity.ShowImageActivity;
-import com.xyt.jhonelee.iptvcall.model.ResultsBean;
+import com.xyt.jhonelee.iptvcall.bean.ResultsBean;
 import com.xyt.jhonelee.iptvcall.widget.MetroViewBorderImpl;
 
 import java.util.ArrayList;
@@ -75,6 +75,12 @@ public class FuliActivity extends Activity implements FuliView,ImageListener{
         MotroViewUtil.initView(mMetro,mLinear);
         //MotroViewUtil.initView(mMetro,mRefresh);
     }
+
+    @Override
+    public void showError(String error) {
+        Toast.makeText(this,error,Toast.LENGTH_SHORT).show();
+    }
+
     @Override
     public void showProgress() {
         mRlLoading.setVisibility(View.VISIBLE);

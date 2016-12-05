@@ -86,6 +86,7 @@
         <activity android:name=".activity.fuli.FuliActivity"/>
         <activity android:name=".activity.ShowImageActivity"/>
         <activity android:name=".activity.android.AndroidActivity"/>
+        <activity android:name=".activity.ShowAndroidActivity"/>
         <service android:name=".service.IPTVService">
             <intent-filter>
                 <action android:name="com.xyt.jhonelee.iptvcall.iptvservice"/>

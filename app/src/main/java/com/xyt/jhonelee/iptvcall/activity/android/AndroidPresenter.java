@@ -1,13 +1,11 @@
 package com.xyt.jhonelee.iptvcall.activity.android;
 
-import com.xyt.jhonelee.iptvcall.model.GankInfo;
+import com.xyt.jhonelee.iptvcall.bean.GankInfo;
 
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.observers.Subscribers;
 import rx.schedulers.Schedulers;
-import rx.subjects.Subject;
 
 /**
  * Created by JhoneLee on 2016/11/30.

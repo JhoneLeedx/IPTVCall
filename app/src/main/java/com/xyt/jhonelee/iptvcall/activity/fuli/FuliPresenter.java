@@ -1,6 +1,6 @@
 package com.xyt.jhonelee.iptvcall.activity.fuli;
 
-import com.xyt.jhonelee.iptvcall.model.GankInfo;
+import com.xyt.jhonelee.iptvcall.bean.GankInfo;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -35,11 +35,16 @@ public class FuliPresenter {
                     @Override
                     public void onError(Throwable e) {
                         view.dismisProgress();
+                        view.showError(e.getMessage());
 
                     }
                     @Override
                     public void onNext(GankInfo gankInfo) {
                         view.dismisProgress();
+                        if(gankInfo.isError()){
+                            view.showError("访问错误。。。");
+                            return;
+                        }
                         view.loadURlImage(gankInfo.getResults());
                     }
                 });

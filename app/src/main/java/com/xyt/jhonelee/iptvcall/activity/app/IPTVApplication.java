@@ -1,9 +1,8 @@
-package com.xyt.jhonelee.iptvcall.app;
+package com.xyt.jhonelee.iptvcall.activity.app;
 
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.telecom.Call;
 
 import com.huawei.rcs.RCSApplication;
 import com.huawei.rcs.call.CallApi;
