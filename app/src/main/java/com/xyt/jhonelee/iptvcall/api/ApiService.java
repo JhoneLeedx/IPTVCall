@@ -1,7 +1,9 @@
 package com.xyt.jhonelee.iptvcall.api;
 
 import com.xyt.jhonelee.iptvcall.api.network.FuliNetwork;
+import com.xyt.jhonelee.iptvcall.api.network.MeinvNetWork;
 import com.xyt.jhonelee.iptvcall.bean.GankInfo;
+import com.xyt.jhonelee.iptvcall.bean.Token;
 
 import java.io.IOException;
 
@@ -45,7 +47,9 @@ public class ApiService {
 
     private static ApiService apiService;
     private Retrofit retrofit;
+    private Retrofit mRetrofit;
     public static final String URL_HOST ="http://gank.io/api/data/";
+    public static final String URL ="http://api.tianapi.com/";
     private ApiService(){
         //初始化retrofit
         retrofit = new Retrofit.Builder()
@@ -54,8 +58,17 @@ public class ApiService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
+
+        mRetrofit = new Retrofit.Builder()
+                .baseUrl(URL)
+                .client(genericClient())
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
         //创建实例
         fuli = retrofit.create(FuliNetwork.class);
+
+        meinv = mRetrofit.create(MeinvNetWork.class);
     }
     //单例实现
     public static ApiService getApiservice(){
@@ -91,5 +104,11 @@ public class ApiService {
     public Observable<GankInfo> getAndroid(int num,int page){
         Observable<GankInfo> observable = fuli.showAndroid(num,page);
         return observable;
+    }
+
+    private MeinvNetWork meinv;
+
+    public Observable<Token> getMeinv(String appkey,int num){
+        return meinv.getMeinv(appkey,num);
     }
 }
