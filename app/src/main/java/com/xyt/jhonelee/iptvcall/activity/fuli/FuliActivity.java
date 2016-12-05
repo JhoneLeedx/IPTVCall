@@ -16,6 +16,8 @@ import com.xyt.jhonelee.iptvcall.MotroViewUtil;
 import com.xyt.jhonelee.iptvcall.R;
 import com.xyt.jhonelee.iptvcall.activity.ShowImageActivity;
 import com.xyt.jhonelee.iptvcall.bean.ResultsBean;
+import com.xyt.jhonelee.iptvcall.contract.FuliContract;
+import com.xyt.jhonelee.iptvcall.presenter.FuliPresenterImpl;
 import com.xyt.jhonelee.iptvcall.widget.MetroViewBorderImpl;
 
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ import butterknife.OnClick;
  * Created by JhoneLee on 2016/11/29.
  */
 
-public class FuliActivity extends Activity implements FuliView,ImageListener{
+public class FuliActivity extends Activity implements FuliContract.View,ImageListener{
 
     @BindView(R.id.linearlayout)
     LinearLayout mLinear;
@@ -41,7 +43,7 @@ public class FuliActivity extends Activity implements FuliView,ImageListener{
     private MetroViewBorderImpl mMetro;
     private List<ResultsBean> mList;
     private ItemAdapter adapter;
-    private FuliPresenter presenter;
+    private FuliContract.Presenter presenter;
 
     private int pageNow=1;
 
@@ -53,7 +55,7 @@ public class FuliActivity extends Activity implements FuliView,ImageListener{
         ButterKnife.bind(this);
         mMetro = new MetroViewBorderImpl(this);
         mMetro.setBackgroundResource(R.drawable.border_color);
-        presenter = new FuliPresenter(this);
+        presenter = new FuliPresenterImpl(this);
         presenter.showFulipic(20,1);
         initRecyclerView();
     }

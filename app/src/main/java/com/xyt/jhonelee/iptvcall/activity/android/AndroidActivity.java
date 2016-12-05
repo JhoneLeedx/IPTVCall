@@ -16,6 +16,8 @@ import com.xyt.jhonelee.iptvcall.MotroViewUtil;
 import com.xyt.jhonelee.iptvcall.R;
 import com.xyt.jhonelee.iptvcall.activity.ShowAndroidActivity;
 import com.xyt.jhonelee.iptvcall.bean.ResultsBean;
+import com.xyt.jhonelee.iptvcall.contract.AndroidContract;
+import com.xyt.jhonelee.iptvcall.presenter.AndroidPresenterImpl;
 import com.xyt.jhonelee.iptvcall.widget.MetroViewBorderImpl;
 
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ import butterknife.OnClick;
  * Created by JhoneLee on 2016/11/30.
  */
 
-public class AndroidActivity extends Activity implements AndroidView,AndroidListener{
+public class AndroidActivity extends Activity implements AndroidContract.View,AndroidListener{
 
     @BindView(R.id.ll)
     protected LinearLayout mLinear;
@@ -43,7 +45,7 @@ public class AndroidActivity extends Activity implements AndroidView,AndroidList
     private AndroidItemAdapter adapter;
 
     private  int pageNow = 1;
-    private AndroidPresenter presenter;
+    private AndroidContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,7 @@ public class AndroidActivity extends Activity implements AndroidView,AndroidList
     }
     private void initView(){
 
-        presenter = new AndroidPresenter(this);
+        presenter = new AndroidPresenterImpl(this);
         presenter.showAndroid(20,1);
         mList = new ArrayList<>();
 
@@ -87,6 +89,11 @@ public class AndroidActivity extends Activity implements AndroidView,AndroidList
         Intent intent = new Intent(this, ShowAndroidActivity.class);
         intent.putExtra("url",bean.getUrl());
         startActivity(intent);
+    }
+
+    @Override
+    public void showError(String error) {
+        Toast.makeText(this,error,Toast.LENGTH_SHORT).show();
     }
 
     @Override
